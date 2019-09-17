@@ -6,23 +6,22 @@
     <title>用户验证</title>
     <meta name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
-    <link rel="stylesheet" type="text/css" href="../base/plugins/sweet-alert/sweet-alert.css"/>
-    <script type="text/javascript" src="../base/plugins/jquery/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="../base/plugins/sweet-alert/sweet-alert.js"></script>
-    <script type="text/javascript" src="../base/scripts/kjd-common-tools.js"></script>
+    <script type="text/javascript" src="js/tools.js"></script>
 </head>
 
 <body>
-<script>
+<!-- <script>
     window.location = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0376800bd1071c94&redirect_uri=https%3a%2f%2fgame.16163.com%2fmhshow_h5%2fxxxx%3frole_id%3d1234&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect'
-</script>
+</script> -->
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
     document.write('正在验证用户...')
 
     //测试
     var callbackUrl = 'http://leohub.cn?source=';
-    var appid = 'wxca458e73b315516f';
+    var wyappid = 'wx0376800bd1071c94'
+    
+    // var myappid = 'wxca458e73b315516f';
     //生产
 
     //var callbackUrl = 'http://kaiwu.feellike21.com/tahiti/wechat/html/login/wechat_verify.html?source=';
@@ -33,113 +32,11 @@
     var source = requestUtil.getParameter('source');
     //微信回调含code调用免登陆接口，否则跳转微信验证
     if (code) {
-        $.ajax({
-            type: "get",
-            url: requestUtil.serverPath + "v1/wechatUser?code=" + code,
-            async: true,
-            success: function (res) {
-                if (res.code == 1000) {
-                    var result = res.data;
-                    var status = result.status;
-                    alert('状态码：' + status + ' 邀请码：' + result.invitationId)
-                    //体检报告来源
-                    if (source == 'report') {
-                        localStorage.setItem('token', result.token);
-                        window.location = '../report/report.html'
-                    } else if (source == 'bill') {
-                        localStorage.setItem('token', result.token);
-                        window.location = 'bill.html'
-                    } else {
-                        //用户还未绑定
-                        if (status == 0) {
-                            localStorage.setItem('openid', result.openId);
-                            localStorage.setItem('headImg', result.headimgurl);
-                            localStorage.setItem('nickName', result.userName);
-                            window.location = 'register.html'
-                            //用户已绑定未预约
-                        } else if (status == 1) {
-                            //若为受邀用户进入受邀流程
-                            if (result.invitationId){
-                                localStorage.setItem('invitationId',result.invitationId);
-                                localStorage.setItem('payType',result.payType);
-                            } else {
-                                localStorage.removeItem('invitationId');
-                                localStorage.removeItem('payType');
-                                localStorage.removeItem('cityList');
-                            }
-                            localStorage.setItem('token', result.token);
-                            localStorage.setItem('mobile', result.mobile);
-                            window.location.href = '../index/index.html';
-                            //用户已预约未到检
-                        } else if (status == 2) {
-                            //若为受邀用户进入受邀流程
-                            if (result.invitationId){
-                                localStorage.setItem('invitationId',result.invitationId);
-                                localStorage.setItem('payType',result.payType);
-                            } else {
-                                localStorage.removeItem('invitationId');
-                                localStorage.removeItem('payType');
-                            }
-                            localStorage.removeItem('heId');
-                            localStorage.setItem('token', result.token);
-                            window.location.href = '../index/booking.html';
-                            //已到检未出报告 暂时流程同1 后期可配置相关页面
-                        } else if (status == 3) {
-                            //若为受邀用户进入受邀流程
-                            if (result.invitationId){
-                                localStorage.setItem('invitationId',result.invitationId);
-                                localStorage.setItem('payType',result.payType);
-                            } else {
-                                localStorage.removeItem('invitationId');
-                                localStorage.removeItem('payType');
-                            }
-                            localStorage.setItem('token', result.token);
-                            localStorage.setItem('mobile', result.mobile);
-                            window.location.href = '../index/index.html';
-                            //已到检已出报告 暂时流程同1 后期可配置相关页面
-                        } else if (status == 4) {
-                            //若为受邀用户进入受邀流程
-                            if (result.invitationId){
-                                localStorage.setItem('invitationId',result.invitationId);
-                                localStorage.setItem('payType',result.payType);
-                            } else {
-                                localStorage.removeItem('invitationId');
-                                localStorage.removeItem('payType');
-                            }
-                            localStorage.setItem('token', result.token);
-                            localStorage.setItem('mobile', result.mobile);
-                            window.location.href = '../index/index.html';
-                            //去邀请页面
-                        } else if (status == 6) {
-                            localStorage.setItem('invitationId',result.invitationId);
-                            localStorage.setItem('token', result.token);
-                            localStorage.setItem('mobile', result.mobile);
-                            window.location.href = 'invitation.html';
-                            //预约过期
-                        } else if (status == 7) {
-                            //若为受邀用户进入受邀流程
-                            if (result.invitationId){
-                                localStorage.setItem('invitationId',result.invitationId);
-                                localStorage.setItem('payType',result.payType);
-                            } else {
-                                localStorage.removeItem('invitationId');
-                                localStorage.removeItem('payType');
-                            }
-                            localStorage.setItem('token', result.token);
-                            localStorage.setItem('mobile', result.mobile);
-                            localStorage.setItem('heId', result.heId);
-                            window.location.href = '../index/booking.html';
-                        }
-                    }
-                } else {
-                    swal(res.msg)
-                }
-            }
-        });
+        document.write('code:'+ code)
     } else {
-        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + appid + '&redirect_uri=' + redirect_uri + source + '&Foauth_response.php&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + wyappid + '&redirect_uri=' + redirect_uri + source + '&Foauth_response.php&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
     }
-</script> -->
+</script>
 </body>
 
 </html>
