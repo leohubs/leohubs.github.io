@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
-    <title>用户验证</title>
+    <title>梦幻秀</title>
     <meta name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
-    <script type="text/javascript" src="js/tools.js"></script>
 </head>
 
 <body>
-<!-- <script>
-    window.location = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0376800bd1071c94&redirect_uri=https%3a%2f%2fgame.16163.com%2fmhshow_h5%2fxxxx%3frole_id%3d1234&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect'
-</script> -->
 
 <script type="text/javascript">
     document.write('正在验证用户...')
 
     //测试
     var callbackUrl = 'http://leohub.cn?source=';
-    var wyappid = 'wx0376800bd1071c94'
-    var myappid = 'wxca458e73b315516f';
+    var appid = 'wx0376800bd1071c94'
     //生产
 
     //var callbackUrl = 'http://kaiwu.feellike21.com/tahiti/wechat/html/login/wechat_verify.html?source=';
@@ -31,9 +25,9 @@
     var source = requestUtil.getParameter('source');
     //微信回调含code调用免登陆接口，否则跳转微信验证
     if (code) {
-        document.write('code:'+ code)
+        window.location = 'index.html'
     } else {
-        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + myappid + '&redirect_uri=' + redirect_uri + source + '&Foauth_response.php&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + appid + '&redirect_uri=' + redirect_uri + source + '&Foauth_response.php&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
     }
 </script>
 </body>
