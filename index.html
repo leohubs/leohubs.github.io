@@ -12,5 +12,23 @@
 <body>
     <img width="100%" src="img/wybg.png" alt="">
 </body>
+<script>
+    var wxtoken = "da778501bdd44a229a6b1fba4f80899a";
+    var dstoken = "65d3cb9bc75f4ccaa492b4cb101bcbb2";
+    var roleid = "110"
+    $.ajax({
+        type: "GET",
+        url: "http://ext.dev.16163.com/mhshow_h5/get_roleinfo?role_id="+ roleid +"&token="+ wxtoken +"&token_type=wx",
+        dataType: "json",
+        success: function(data){
+        //   if (data.code == 0) {
+
+        //   } else {
+        //     alert('服务器开了个小差，请刷新重试')
+        //   }
+        console.log("data:"+ data)
+        }
+    });
+</script>
 
 </html>
