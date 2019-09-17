@@ -4,4 +4,6 @@ html,body{
   background: #ccc;
   line-height: 100%;
   text-align: center;
+  color: crimson;
+  font-family: 'Courier New', Courier, monospace;
 }
