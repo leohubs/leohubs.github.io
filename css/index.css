@@ -1,9 +1,2 @@
-html,body{
-  width: 100%;
-  height: 100%;
-  background: #ccc;
-  line-height: 100%;
-  text-align: center;
-  color: crimson;
-  font-family: 'Courier New', Courier, monospace;
-}
+*{margin: 0;padding:0}
+
