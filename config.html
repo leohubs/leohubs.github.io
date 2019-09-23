@@ -10,26 +10,26 @@
 <body>
 
 <script type="text/javascript">
-    document.write('正在验证用户...')
+    document.write('登录成功...')
 
-    //测试
-    var callbackUrl = 'https://exth5.dev.16163.com?source=';
-    var appid = 'wx0376800bd1071c94'
-    //生产
+    // //测试
+    // var callbackUrl = 'https://exth5.dev.16163.com?source=';
+    // var appid = 'wx0376800bd1071c94'
+    // //生产
 
-    //var callbackUrl = 'http://kaiwu.feellike21.com/tahiti/wechat/html/login/wechat_verify.html?source=';
-    //var appid = 'wxe3e70db689e3ab2e';
+    // //var callbackUrl = 'http://kaiwu.feellike21.com/tahiti/wechat/html/login/wechat_verify.html?source=';
+    // //var appid = 'wxe3e70db689e3ab2e';
 
-    var redirect_uri = encodeURI(callbackUrl);
-    var code = requestUtil.getParameter('code');
-    var source = requestUtil.getParameter('source');
-    //微信回调含code调用免登陆接口，否则跳转微信验证
-    if (code) {
-        console.log(code)
-        window.location = 'index.html'
-    } else {
-        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + appid + '&redirect_uri=' + redirect_uri + source + '&Foauth_response.php&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
-    }
+    // var redirect_uri = encodeURI(callbackUrl);
+    // var code = requestUtil.getParameter('code');
+    // var source = requestUtil.getParameter('source');
+    // //微信回调含code调用免登陆接口，否则跳转微信验证
+    // if (code) {
+    //     console.log(code)
+    //     window.location = 'index.html'
+    // } else {
+    //     window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + appid + '&redirect_uri=' + redirect_uri + source + '&Foauth_response.php&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+    // }
 </script>
 </body>
 
