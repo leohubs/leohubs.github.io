@@ -41,9 +41,10 @@
 
     //var callbackUrl = 'http://kaiwu.feellike21.com/tahiti/wechat/html/login/wechat_verify.html?source=';
     //var appid = 'wxe3e70db689e3ab2e';
-    //https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0f5d6df178d70bcb
+    //https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0376800bd1071c94&redirect_uri=https%3a%2f%2fgame.16163.com%2fmhshow_h5%2fxxxx%3frole_id%3d1234&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect   
 
-    var redirect_uri = 'https%3A%2F%2Fexth5.dev.16163.com';
+
+    var redirect_uri = 'https%3a%2f%2fgame.16163.com%2fmhshow_h5%2fxxxx%3frole_id%3d1234';
     var code = requestUtil.getParameter('code');
     var source = requestUtil.getParameter('source');
     //微信回调含code调用免登陆接口，否则跳转微信验证
