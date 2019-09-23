@@ -49,7 +49,7 @@
     var source = requestUtil.getParameter('source');
     //微信回调含code调用免登陆接口，否则跳转微信验证
     if (code) {
-        window.location = 'config.html'
+        document.write(code)
     } else {
         document.write("<br>redirect_uri:" + redirect_uri + "<br> code:" + code + "<br> myappid:" + wyappid)
         window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + wyappid + '&redirect_uri=' + redirect_uri + '&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
