@@ -13,7 +13,7 @@
     document.write('正在验证用户...')
 
     //测试
-    var callbackUrl = 'http://leohub.cn?source=';
+    var callbackUrl = 'https://exth5.dev.16163.com?source=';
     var appid = 'wx0376800bd1071c94'
     //生产
 
@@ -25,6 +25,7 @@
     var source = requestUtil.getParameter('source');
     //微信回调含code调用免登陆接口，否则跳转微信验证
     if (code) {
+        console.log(code)
         window.location = 'index.html'
     } else {
         window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + appid + '&redirect_uri=' + redirect_uri + source + '&Foauth_response.php&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
