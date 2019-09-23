@@ -41,6 +41,7 @@
 
     //var callbackUrl = 'http://kaiwu.feellike21.com/tahiti/wechat/html/login/wechat_verify.html?source=';
     //var appid = 'wxe3e70db689e3ab2e';
+    //https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0f5d6df178d70bcb
 
     var redirect_uri = encodeURI(callbackUrl);
     var code = requestUtil.getParameter('code');
@@ -50,8 +51,8 @@
         
         window.location = 'config.html'
     } else {
-        document.write("<br>callbackUrl:" + callbackUrl + "<br> code:" + code + "<br> myappid:" + myappid)
-        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + myappid + '&redirect_uri=' + redirect_uri + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+        document.write("<br>callbackUrl:" + callbackUrl + "<br> code:" + code + "<br> myappid:" + wyappid)
+        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + wyappid + '&redirect_uri=' + redirect_uri + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
         
     }
 </script>
