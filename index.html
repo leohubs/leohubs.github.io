@@ -51,7 +51,7 @@
         window.location = 'config.html'
     } else {
         document.write("<br>callbackUrl:" + callbackUrl + "<br> code:" + code + "<br> myappid:" + wyappid)
-        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + wyappid + '&redirect_uri=' + redirect_uri + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + wyappid + '&redirect_uri=' + redirect_uri + '&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
         
     }
 </script>
