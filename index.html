@@ -35,7 +35,8 @@
 
     //测试
     var callbackUrl = 'exth5.dev.16163.com';
-    var appid = 'wx0376800bd1071c94'
+    var appid = 'wx0376800bd1071c94';
+    var myappid = 'wx0f5d6df178d70bcb'
     //生产
 
     //var callbackUrl = 'http://kaiwu.feellike21.com/tahiti/wechat/html/login/wechat_verify.html?source=';
@@ -49,7 +50,7 @@
         console.log(code)
         window.location = 'index.html'
     } else {
-        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + appid + '&redirect_uri=' + redirect_uri + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + myappid + '&redirect_uri=' + redirect_uri + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
 
     }
 </script>
