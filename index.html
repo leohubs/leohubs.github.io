@@ -49,7 +49,8 @@
         console.log(code)
         window.location = 'index.html'
     } else {
-        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + appid + '&redirect_uri=' + redirect_uri + source + '&Foauth_response.php&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + appid + '&redirect_uri=' + redirect_uri + source + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+
     }
 </script>
 
