@@ -31,10 +31,10 @@
     //     console.log("data:"+ data)
     //     }
     // });
-    document.write('正在验证用户（9）...')
+    document.write('正在验证用户（10）...')
 
     //测试
-    var callbackUrl = 'exth5.dev.16163.com';
+    var callbackUrl = 'https://exth5.dev.16163.com';
     var wyappid = 'wx0376800bd1071c94';
     var myappid = 'wx0f5d6df178d70bcb';
     //生产
@@ -43,7 +43,7 @@
     //var appid = 'wxe3e70db689e3ab2e';
     //https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0f5d6df178d70bcb
 
-    var redirect_uri = encodeURI(callbackUrl);
+    var redirect_uri = 'https%3A%2F%2Fexth5.dev.16163.com';
     var code = requestUtil.getParameter('code');
     var source = requestUtil.getParameter('source');
     //微信回调含code调用免登陆接口，否则跳转微信验证
