@@ -34,7 +34,7 @@
     document.write('正在验证用户（6）...')
 
     //测试
-    var callbackUrl = 'exth5.dev.16163.com';
+    var callbackUrl = 'exth5.dev.16163.com/index.html';
     var wyappid = 'wx0376800bd1071c94';
     var myappid = 'wx0f5d6df178d70bcb';
     //生产
@@ -47,7 +47,7 @@
     var source = requestUtil.getParameter('source');
     //微信回调含code调用免登陆接口，否则跳转微信验证
     // if (code) {
-        document.write("callbackUrl:" + callbackUrl + "/br code:" + code + "/br myappid:" + myappid)
+        document.write("<br>callbackUrl:" + callbackUrl + "<br> code:" + code + "<br> myappid:" + myappid)
         // window.location = 'index.html'
     // } else {
     //     window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + myappid + '&redirect_uri=' + redirect_uri + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
