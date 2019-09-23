@@ -31,10 +31,10 @@
     //     console.log("data:"+ data)
     //     }
     // });
-    document.write('正在验证用户（7）...')
+    document.write('正在验证用户（8）...')
 
     //测试
-    var callbackUrl = 'exth5.dev.16163.com/index.html';
+    var callbackUrl = 'exth5.dev.16163.com';
     var wyappid = 'wx0376800bd1071c94';
     var myappid = 'wx0f5d6df178d70bcb';
     //生产
@@ -50,8 +50,9 @@
         
         window.location = 'config.html'
     } else {
-        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + myappid + '&redirect_uri=' + redirect_uri + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
         document.write("<br>callbackUrl:" + callbackUrl + "<br> code:" + code + "<br> myappid:" + myappid)
+        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + myappid + '&redirect_uri=' + redirect_uri + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
+        
     }
 </script>
 
