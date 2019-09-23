@@ -31,7 +31,7 @@
     //     console.log("data:"+ data)
     //     }
     // });
-    document.write('正在验证用户（5）...')
+    document.write('正在验证用户（6）...')
 
     //测试
     var callbackUrl = 'exth5.dev.16163.com';
@@ -47,10 +47,10 @@
     var source = requestUtil.getParameter('source');
     //微信回调含code调用免登陆接口，否则跳转微信验证
     if (code) {
-        console.log(code)
-        window.location = 'index.html'
+        document.write("callbackUrl:" + callbackUrl + "/br code:" + code + "/br myappid:" + myappid)
+        // window.location = 'index.html'
     } else {
-        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + myappid + '&redirect_uri=' + redirect_uri + '&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
+        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + myappid + '&redirect_uri=' + redirect_uri + '&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
 
     }
 </script>
