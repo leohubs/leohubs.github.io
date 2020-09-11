@@ -20,14 +20,21 @@
     <a class="btn" href="pages/longhu/index.html">2015龙湖仕官生校园招聘</a>
     <a class="btn" href="pages/kapian/index.html">卡片式场景应用</a>
     <a class="btn" href="pages/zhongtong/index.html">中通快递招聘</a>
-    <a class="btn h5towx">H5跳转小程序</a>
+    <a class="btn h5towx" data-mshare="0">H5跳转小程序</a>
 </body>
-<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+<!-- <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script> -->
+<script src="js/mshare.js"></script>
 <script>
-    $(".h5towx").on("click",function(){
-        console.log('123')
-        wx.miniProgram.navigateTo({url:'pages/nianhui2014/index.html'})
-    })
+    var mshare = new mShare({
+        title: 'Lorem ipsum dolor sit.',
+        url: 'http://m.ly.com',
+        desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat inventore minima voluptates.',
+        img: 'http://placehold.it/150x150'
+    });
+    $('.h5towx').click(function () {
+        // 1 ==> 朋友圈  2 ==> 朋友  0 ==> 直接弹出原生
+        mshare.init(+$(this).data('mshare'));
+    });
 </script>
 
 </html>
